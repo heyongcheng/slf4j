@@ -40,6 +40,8 @@ import org.slf4j.helpers.SubstituteLogger;
 import org.slf4j.helpers.SubstituteLoggerFactory;
 import org.slf4j.helpers.Util;
 import org.slf4j.impl.StaticLoggerBinder;
+import org.slf4j.trace.TraceContext;
+import org.slf4j.trace.TraceLogger;
 
 /**
  * The <code>LoggerFactory</code> is a utility class producing Loggers for
@@ -355,6 +357,9 @@ public final class LoggerFactory {
      */
     public static Logger getLogger(String name) {
         ILoggerFactory iLoggerFactory = getILoggerFactory();
+        if(TraceContext.isTraceEnable()){
+            return new TraceLogger(iLoggerFactory.getLogger(name));
+        }
         return iLoggerFactory.getLogger(name);
     }
 
