@@ -403,7 +403,19 @@
 
   </profiles>
 
+  <repositories>
+    <repository>
+      <id>Sumpay</id>
+      <name>Sumpay Repository</name>
+      <url>http://192.168.8.240:8081/nexus/content/groups/public/</url>
+    </repository>
+  </repositories>
   <pluginRepositories>
+    <pluginRepository>
+      <id>Sumpay</id>
+      <name>Sumpay Repository</name>
+      <url>http://192.168.8.240:8081/nexus/content/groups/public/</url>
+    </pluginRepository>
   </pluginRepositories>
 
   <distributionManagement>
@@ -412,13 +424,20 @@
       <url>scp://te.qos.ch/var/www/www.slf4j.org/htdocs/</url>
     </site>
 
-    <repository>
-      <!--<id>pixie</id>-->
-      <!--<url>scp://pixie.qos.ch/var/mvnrepo/</url>-->
+    <!--<repository>
+      &lt;!&ndash;<id>pixie</id>&ndash;&gt;
+      &lt;!&ndash;<url>scp://pixie.qos.ch/var/mvnrepo/</url>&ndash;&gt;
       <id>sonatype-nexus-staging</id>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>-->
+    <repository>
+      <id>Sumpay-releases</id>
+      <url>http://192.168.8.240:8081/nexus/content/repositories/releases/</url>
     </repository>
-
+    <snapshotRepository>
+      <id>Sumpay-snapshots</id>
+      <url>http://192.168.8.240:8081/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
   </distributionManagement>
 
 </project>
