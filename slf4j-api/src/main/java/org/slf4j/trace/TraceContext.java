@@ -53,6 +53,8 @@ public class TraceContext {
     public static String setTraceId(String traceId){
         if (traceId != null){
             TRACE_ID.set(traceId);
+        }else {
+            TRACE_ID.remove();
         }
         return traceId;
     }
@@ -81,6 +83,8 @@ public class TraceContext {
     public static String setSpanId(String spanId){
         if (spanId != null){
             SPAN_ID.set(spanId);
+        }else {
+            SPAN_ID.remove();
         }
         return spanId;
     }
